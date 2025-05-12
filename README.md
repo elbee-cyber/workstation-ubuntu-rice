@@ -1,2 +1,6 @@
 # workstation-debian-rice
-rice for my machine
+Minimalist rice for my Debian machine
+- Uses i3, picom, rofi, polybar, pywal
+- Includes install (only tested on Debian)
+
+![Screenshot](image.png)

@@ -6,7 +6,7 @@ echo 'deb http://archive.debian.org/debian-security stretch/updates main contrib
 ' | sudo tee -a /etc/apt/sources.list.d/backports.list
 sudo apt update
 # Apps and base system
-sudo apt install polybar i3 feh zsh python3-pip curl alacritty autoconf build-essential git stow tmux tree vim-nox picom -y
+sudo apt install polybar i3 feh zsh rofi python3-pip curl alacritty autoconf build-essential git stow tmux tree vim-nox picom -y
 sudo pip3 install pywal --break-system-packages
 
 echo "Installing networkmanager-dmenu..."
