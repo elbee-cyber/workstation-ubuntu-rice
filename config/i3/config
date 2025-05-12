@@ -186,8 +186,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 set $term alacritty
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf &
+#exec_always --no-startup-id picom --config ~/.config/picom/picom.conf &
 gaps inner 15
 gaps outer 15
 smart_borders on
-exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
+for_window [class="^.*"] border pixel 0
+exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/dark-sky.jpg
+exec_always --no-startup-id ~/.config/polybar/launch.sh --forest

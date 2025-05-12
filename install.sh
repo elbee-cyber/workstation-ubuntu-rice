@@ -38,27 +38,18 @@ cp -rf ~/.config/i3/config ~/.config/i3/backup/config.bak
 echo "Configuring alacritty..."
 sudo alacritty migrate
 sudo chown `whoami`:`whoami` /etc/xdg/alacritty/alacritty.toml
-echo "set \$term alacritty" >>~/.config/i3/config
-sed -i -E 's|(^\s*bindsym\s+\$mod\+Return\s+exec\s+).*|\1alacritty|' ~/.config/i3/config
 
 echo "Configuring picom borders..."
 mkdir -p ~/.config/picom
 cp -rf config/picom/* ~/.config/picom
-echo "exec_always picom --config ~/.config/picom/picom.conf &" >>~/.config/i3/config
-
-echo "Adding gaps to i3..."
-echo "gaps inner 15" >>~/.config/i3/config
-echo "gaps outer 15" >>~/.config/i3/config
-echo "smart_borders on" >>~/.config/i3/config
 
 echo "Setting wallpaper..."
 mkdir -p ~/.config/wallpapers
 cp dark-sky.jpg ~/.config/wallpapers
 
-
 echo "Configuring polybar..."
-mkdir -p ~/.config/polybar/colorblocks
-cp -rf config/polybar/* ~/.config/polybar/colorblocks
-chmod +x ~/.config/polybar/colorblocks/scripts/*.sh
-chmod +x ~/.config/polybar/colorblocks/launch.sh
-echo "exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh" >>~/.config/i3/config
+mkdir -p ~/.config/polybar/
+cp -rf config/polybar/* ~/.config/polybar
+chmod +x ~/.config/polybar/launch.sh
+
+cp i3/config ~/.config/i3
