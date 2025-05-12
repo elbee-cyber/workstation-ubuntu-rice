@@ -58,3 +58,5 @@ chmod +x ~/.config/polybar/forest/scripts/*.sh
 git clone https://github.com/dylanaraps/neofetch
 cd neofetch
 sudo make install
+
+echo "All done, reboot to apply changes"
