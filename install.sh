@@ -53,6 +53,9 @@ mkdir -p ~/.config/wallpapers
 cp dark-sky.jpg ~/.config/wallpapers
 echo "wal -i ~/.config/wallpapers/dark-sky.jpg" >>~/.config/i3/config
 
+echo "Removing bar section from i3 config..."
+awk '/^\s*bar\s*{/ {in_bar=1; print "# " $0; next} in_bar && /^\s*}/ {in_bar=0; print "# " $0; next} in_bar {print "# " $0; next} {print}' ~/.config/i3/config
+
 echo "Configuring polybar..."
 mkdir -p ~/.config/polybar/colorblocks
 cp -rf config/polybar/* ~/.config/polybar/colorblocks
