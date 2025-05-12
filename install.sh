@@ -6,7 +6,7 @@ echo 'deb http://archive.debian.org/debian-security stretch/updates main contrib
 ' | sudo tee -a /etc/apt/sources.list.d/backports.list
 sudo apt update
 # Apps and base system
-sudo apt install polybar i3 rofi zsh python3-pip curl autoconf build-essential git stow tmux tree vim-nox picom -y
+sudo apt install polybar i3 rofi zsh python3-pip curl alacritty autoconf build-essential git stow tmux tree vim-nox picom -y
 sudo pip3 install pywal --break-system-packages
 
 echo "Installing networkmanager-dmenu..."
@@ -41,7 +41,7 @@ sed -i -E 's|(^\s*bindsym\s+\$mod\+Return\s+exec\s+).*|\1alacritty|' ~/.config/i
 echo "Configuring picom borders..."
 mkdir -p ~/.config/picom
 cp -rf config/picom/* ~/.config/picom
-echo "picom --config ~/.config/picom/picom.conf &" >>~/.config/i3/config
+echo "exec picom --config ~/.config/picom/picom.conf &" >>~/.config/i3/config
 
 echo "Adding gaps to i3..."
 echo "gaps inner 15" >>~/.config/i3/config
