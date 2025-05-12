@@ -6,7 +6,7 @@ echo 'deb http://archive.debian.org/debian-security stretch/updates main contrib
 ' | sudo tee -a /etc/apt/sources.list.d/backports.list
 sudo apt update
 # Apps and base system
-sudo apt install polybar i3 rofi zsh python3-pip curl alacritty autoconf build-essential git stow tmux tree vim-nox picom -y
+sudo apt install polybar i3 feh rofi zsh python3-pip curl alacritty autoconf build-essential git stow tmux tree vim-nox picom -y
 sudo pip3 install pywal --break-system-packages
 
 echo "Installing networkmanager-dmenu..."
@@ -25,7 +25,10 @@ FDIR="$HOME/.local/share/fonts"
 cp -rf fonts/* "$FDIR"
 fc-cache -f -v
 
-echo "You will be prompted to generate i3 config, press return"
+echo
+echo "You will be prompted to generate i3 config, press return twice" 
+echo
+sleep 2
 i3-config-wizard
 
 echo "Backing up i3 config..."
@@ -51,10 +54,11 @@ echo "smart_borders on" >>~/.config/i3/config
 echo "Setting wallpaper..."
 mkdir -p ~/.config/wallpapers
 cp dark-sky.jpg ~/.config/wallpapers
-echo "exec_always wal -i ~/.config/wallpapers/dark-sky.jpg" >>~/.config/i3/config
+
 
 echo "Configuring polybar..."
 mkdir -p ~/.config/polybar/colorblocks
 cp -rf config/polybar/* ~/.config/polybar/colorblocks
+chmod +x ~/.config/polybar/colorblocks/scripts/*.sh
 chmod +x ~/.config/polybar/colorblocks/launch.sh
-echo "exec_always --no-startup-id ~/.config/polybar/launch.sh" >>~/.config/i3/config
+echo "exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh" >>~/.config/i3/config

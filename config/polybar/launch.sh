@@ -10,7 +10,7 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-bash ~/.config/polybar/material/scripts/pywal.sh ~/.config/wallpapers/dark-sky.jpg
+bash ~/.config/polybar/colorblocks/scripts/pywal.sh ~/.config/wallpapers/dark-sky.jpg
 
 # Launch the bar
 polybar -q main -c "$DIR"/config.ini &
