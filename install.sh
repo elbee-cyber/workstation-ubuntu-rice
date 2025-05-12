@@ -38,12 +38,6 @@ sudo chown `whoami`:`whoami` /etc/xdg/alacritty/alacritty.toml
 echo "set \$term alacritty" >>~/.config/i3/config
 sed -i -E 's|(^\s*bindsym\s+\$mod\+Return\s+exec\s+).*|\1alacritty|' ~/.config/i3/config
 
-echo "Configuring polybar..."
-mkdir -p ~/.config/polybar/forest
-cp -rf config/polybar/* ~/.config/polybar/forest
-chmod +x ~/.config/polybar/forest/launch.sh
-echo "exec_always --no-startup-id ~/.config/polybar/launch.sh" >>~/.config/i3/config
-
 echo "Configuring picom borders..."
 mkdir -p ~/.config/picom
 cp -rf config/picom/* ~/.config/picom
@@ -58,3 +52,9 @@ echo "Setting wallpaper..."
 mkdir -p ~/.config/wallpapers
 cp dark-sky.jpg ~/.config/wallpapers
 echo "wal -i ~/.config/wallpapers/dark-sky.jpg" >>~/.config/i3/config
+
+echo "Configuring polybar..."
+mkdir -p ~/.config/polybar/colorblocks
+cp -rf config/polybar/* ~/.config/polybar/colorblocks
+chmod +x ~/.config/polybar/colorblocks/launch.sh
+echo "exec_always --no-startup-id ~/.config/polybar/launch.sh" >>~/.config/i3/config

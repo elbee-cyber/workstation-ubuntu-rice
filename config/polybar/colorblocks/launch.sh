@@ -2,13 +2,15 @@
 
 # Add this script to your wm startup file.
 
-DIR="$HOME/.config/polybar/forest"
+DIR="$HOME/.config/polybar/colorblocks"
 
 # Terminate already running bar instances
 killall -q polybar
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+bash ~/.config/polybar/material/scripts/pywal.sh ~/.config/wallpapers/dark-sky.jpg
 
 # Launch the bar
 polybar -q main -c "$DIR"/config.ini &
