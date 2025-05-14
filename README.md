@@ -4,4 +4,4 @@ Minimalist rice for my Debian machine
 - Includes installer (only tested on Debian)
 - I SWEAR I DONT RUN KALI
 
-![Screenshot](image.png)
+![Screenshot](i3.png)
