@@ -190,7 +190,6 @@ gaps inner 15
 gaps outer 15
 smart_borders on
 for_window [class="^.*"] border pixel 0
-exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/dark-sky.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh --forest
 
 # Shortcuts
@@ -201,3 +200,15 @@ bindsym XF86AudioMute exec --no-startup-id amixer set Master 1+ toggle
 ## Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --device intel_backlight set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --device intel_backlight set 5%-
+
+## ticktick
+bindsym $mod+t exec --no-startup-id ticktick floating toggle
+
+## screenshot
+bindsym Print exec --no-startup-id flameshot gui &
+
+# Final configs
+## Wallpaper
+exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/dark-sky.jpg
+## Start copyq service
+exec --no-startup-id copyq &
