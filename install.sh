@@ -2,11 +2,9 @@
 # Polybar themes: https://github.com/adi1090x/polybar-themes (alot was taken from here)
 
 echo "Installing packages..."
-echo 'deb http://archive.debian.org/debian-security stretch/updates main contrib non-free
-' | sudo tee -a /etc/apt/sources.list.d/backports.list
 sudo apt update
 # Apps and base system
-sudo apt install polybar i3 feh zsh rofi python3-pip curl alacritty thunar autoconf build-essential git stow tmux tree vim-nox picom -y
+sudo apt install polybar i3 feh zsh rofi python3-pip curl alacritty thunar autoconf build-essential git stow tmux tree vim-nox fonts-noto picom -y
 sudo pip3 install pywal --break-system-packages
 
 echo "Installing networkmanager-dmenu..."
