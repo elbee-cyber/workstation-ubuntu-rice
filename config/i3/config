@@ -194,9 +194,10 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh --forest
 
 # Shortcuts
 ## Volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master 1+ toggle
+## amixer -D pulse sset Master 0%
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 ## Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --device intel_backlight set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --device intel_backlight set 5%-
@@ -212,6 +213,9 @@ bindsym $mod+p exec --no-startup-id ~/.config/polybar/forest/scripts/powermenu.s
 
 # Final configs
 ## Wallpaper
-exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/dark-sky.jpg
+exec_always --no-startup-id /home/elbee/.config/wallpapers/choose.sh
 ## Start copyq service
 exec --no-startup-id copyq &
+
+# Check monitor setup
+exec_always --no-startup-id autorandr | head -n 1 > ~/.config/monitor
