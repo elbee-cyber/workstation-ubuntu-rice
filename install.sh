@@ -4,7 +4,7 @@
 echo "Installing packages..."
 sudo apt update
 # Apps and base system
-sudo apt install polybar i3 feh zsh rofi python3-pip curl alacritty thunar autoconf build-essential git stow tmux tree vim-nox fonts-noto picom autorandr xrandr flameshot -y
+sudo apt install polybar i3 feh zsh rofi python3-pip curl alacritty thunar autoconf build-essential git stow tmux tree vim-nox betterlockscreen fonts-noto picom autorandr xrandr flameshot -y
 sudo pip3 install pywal --break-system-packages
 
 echo "Installing networkmanager-dmenu..."
