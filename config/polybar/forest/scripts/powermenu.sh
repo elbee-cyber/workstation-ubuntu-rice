@@ -58,11 +58,7 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
-		fi
+		betterlockscreen --lock blur
         ;;
     $suspend)
 		ans=$(confirm_exit &)
